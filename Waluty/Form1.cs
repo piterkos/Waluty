@@ -16,11 +16,31 @@ namespace Waluty
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        Waluta waluta;
+         
+        private void Waluty_listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Waluta waluta = new Waluta("2017-03-30", 0);
+            if (Waluty_listBox.SelectedIndex == 0)
+                Flaga_pictureBox.Image = Properties.Resources.EURO;
+            if (Waluty_listBox.SelectedIndex == 1)
+                Flaga_pictureBox.Image = Properties.Resources.USA;
+            if (Waluty_listBox.SelectedIndex == 2)
+                Flaga_pictureBox.Image = Properties.Resources.GBR;
+            else if (Waluty_listBox.SelectedIndex == 3)
+                Flaga_pictureBox.Image = Properties.Resources.CHF;
+            OdswiezDane();
+        }
+        void OdswiezDane()
+        {
+            waluta = new Waluta(Data_TimePicker.Value.ToString("yyyy-MM-dd"), Waluty_listBox.SelectedIndex);
             waluta.PobierzDane();
+            Kurs_label.Text = waluta.Kurs;
+            Waluta_label.Text = waluta.NazwaWaluty;
+            Historia_richTextBox.AppendText(waluta.Data + "  " + waluta.NazwaWaluty + "  " + waluta.Kurs +"\n");
+        }
+        private void Data_TimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            OdswiezDane();
         }
     }
 }
