@@ -33,7 +33,9 @@
             this.Data_TimePicker = new System.Windows.Forms.DateTimePicker();
             this.Waluta_label = new System.Windows.Forms.Label();
             this.Kurs_label = new System.Windows.Forms.Label();
-            this.Historia_richTextBox = new System.Windows.Forms.RichTextBox();
+            this.rtb_historia = new System.Windows.Forms.RichTextBox();
+            this.btn_wyczysc = new System.Windows.Forms.Button();
+            this.btn_dodajDoHistorii = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Flaga_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,6 @@
             this.Data_TimePicker.Size = new System.Drawing.Size(111, 20);
             this.Data_TimePicker.TabIndex = 2;
             this.Data_TimePicker.Value = new System.DateTime(2017, 3, 29, 0, 0, 0, 0);
-            this.Data_TimePicker.ValueChanged += new System.EventHandler(this.Data_TimePicker_ValueChanged);
             // 
             // Waluta_label
             // 
@@ -94,20 +95,42 @@
             this.Kurs_label.TabIndex = 4;
             this.Kurs_label.Text = "Kurs:";
             // 
-            // Historia_richTextBox
+            // rtb_historia
             // 
-            this.Historia_richTextBox.Location = new System.Drawing.Point(3, 124);
-            this.Historia_richTextBox.Name = "Historia_richTextBox";
-            this.Historia_richTextBox.Size = new System.Drawing.Size(375, 173);
-            this.Historia_richTextBox.TabIndex = 5;
-            this.Historia_richTextBox.Text = "";
+            this.rtb_historia.Location = new System.Drawing.Point(3, 124);
+            this.rtb_historia.Name = "rtb_historia";
+            this.rtb_historia.Size = new System.Drawing.Size(375, 173);
+            this.rtb_historia.TabIndex = 5;
+            this.rtb_historia.Text = "";
+            // 
+            // btn_wyczysc
+            // 
+            this.btn_wyczysc.Location = new System.Drawing.Point(3, 303);
+            this.btn_wyczysc.Name = "btn_wyczysc";
+            this.btn_wyczysc.Size = new System.Drawing.Size(145, 23);
+            this.btn_wyczysc.TabIndex = 6;
+            this.btn_wyczysc.Text = "Wyczyść historię";
+            this.btn_wyczysc.UseVisualStyleBackColor = true;
+            this.btn_wyczysc.Click += new System.EventHandler(this.btn_wyczysc_Click);
+            // 
+            // btn_dodajDoHistorii
+            // 
+            this.btn_dodajDoHistorii.Location = new System.Drawing.Point(102, 93);
+            this.btn_dodajDoHistorii.Name = "btn_dodajDoHistorii";
+            this.btn_dodajDoHistorii.Size = new System.Drawing.Size(104, 23);
+            this.btn_dodajDoHistorii.TabIndex = 7;
+            this.btn_dodajDoHistorii.Text = "Dodaj do historii";
+            this.btn_dodajDoHistorii.UseVisualStyleBackColor = true;
+            this.btn_dodajDoHistorii.Click += new System.EventHandler(this.btn_dodajDoHistorii_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 309);
-            this.Controls.Add(this.Historia_richTextBox);
+            this.ClientSize = new System.Drawing.Size(390, 337);
+            this.Controls.Add(this.btn_dodajDoHistorii);
+            this.Controls.Add(this.btn_wyczysc);
+            this.Controls.Add(this.rtb_historia);
             this.Controls.Add(this.Kurs_label);
             this.Controls.Add(this.Waluta_label);
             this.Controls.Add(this.Data_TimePicker);
@@ -128,7 +151,9 @@
         private System.Windows.Forms.DateTimePicker Data_TimePicker;
         private System.Windows.Forms.Label Waluta_label;
         private System.Windows.Forms.Label Kurs_label;
-        private System.Windows.Forms.RichTextBox Historia_richTextBox;
+        private System.Windows.Forms.RichTextBox rtb_historia;
+        private System.Windows.Forms.Button btn_wyczysc;
+        private System.Windows.Forms.Button btn_dodajDoHistorii;
     }
 }
 

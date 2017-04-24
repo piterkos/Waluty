@@ -28,6 +28,7 @@ namespace Waluty
                 Flaga_pictureBox.Image = Properties.Resources.GBR;
             else if (Waluty_listBox.SelectedIndex == 3)
                 Flaga_pictureBox.Image = Properties.Resources.CHF;
+
             OdswiezDane();
         }
         void OdswiezDane()
@@ -36,11 +37,17 @@ namespace Waluty
             waluta.PobierzDane();
             Kurs_label.Text = waluta.Kurs;
             Waluta_label.Text = waluta.NazwaWaluty;
-            Historia_richTextBox.AppendText(waluta.Data + "  " + waluta.NazwaWaluty + "  " + waluta.Kurs +"\n");
         }
-        private void Data_TimePicker_ValueChanged(object sender, EventArgs e)
+        
+        private void btn_wyczysc_Click(object sender, EventArgs e)
+        {
+            rtb_historia.Clear();
+        }
+
+        private void btn_dodajDoHistorii_Click(object sender, EventArgs e)
         {
             OdswiezDane();
+            rtb_historia.AppendText(waluta.Data + "  " + waluta.NazwaWaluty + "  " + waluta.Kurs + "\n");
         }
     }
 }
